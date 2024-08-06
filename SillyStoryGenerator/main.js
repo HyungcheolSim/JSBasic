@@ -3,7 +3,8 @@ const randomize = document.querySelector(".randomize");
 const story = document.querySelector(".story");
 
 function randomValueFromArray(array) {
-  const random = Math.floor(Math.random() * Array.length);
+  const random = Math.floor(Math.random() * array.length);
+  console.log(random);
   return array[random];
 }
 
@@ -16,29 +17,34 @@ const insertZ = ["spontaneously combusted", "melted into a puddle on the sidewal
 
 randomize.addEventListener("click", result);
 
+//
 function result() {
-  const oldStory = story.textContent;
+  let oldStory = story.textContent;
+  console.log("oldStory: "+ oldStory);
   let newStory = setStory(oldStory);
+
   if (customName.value !== "") {
     const name = customName.value;
     newStory = newStory.replaceAll("Bob", name);
   }
 
   if (document.getElementById("uk").checked) {
-    const weight = Math.round(300);
-    const temperature = Math.round(94);
-    
+    const weight = Math.round(300/14)+" stone";
+    const temperature = Math.round((94-32)*5/9)+' centigrade';
+    newStory = newStory.replace('300 pounds',weight).replace('94 fahrenheit',temperature);
+
   }
 
   story.textContent = newStory;
   story.style.visibility = "visible";
 }
+
 function setStory(oldStory) {
   let xItem = randomValueFromArray(insertX);
   let yItem = randomValueFromArray(insertY);
   let zItem = randomValueFromArray(insertZ);
-  let newStory = StoryText.replaceAll(':insertx:',xItem);
-  newStory =newStory.replace(':inserty:',yItem).replace(':insertz:',zItem);
-  // 기존 이야기와 같으면 재귀 호출
-  return oldStory === newStory ? setStory(oldStory) : newStory;
+  let newStory = StoryText.replaceAll(":insertx:", xItem);
+  newStory = newStory.replace(":inserty:", yItem).replace(":insertz:", zItem);
+  console.log(newStory);
+  return oldStory == newStory ? setStory(oldStory) : newStory;
 }
