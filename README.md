@@ -22,3 +22,23 @@ number() : 함수
 ### 8/5 Note
 [MDN 기초 예제 도전_Silly Story Generator](https://developer.mozilla.org/ko/docs/Learn/JavaScript/First_steps/Silly_story_generator)
 
+push: 맨 뒤에 넣기
+pop: 맨 뒤에서 빼기
+Shift : 맨 앞에 넣기
+unShift : 맨 앞에 빼기
+
+JS 객체
+
+객체 만들기
+var p1 = {};
+typeof p1; => "object"
+
+### var vs let vs const
+
+### 호이스팅
+인터프리터가 변수와 함수의 메모리 공간을 선언 전에 미리 할당하는 것
+
+var로 선언한 변수의 경우 호이스팅 시 undefined로 변수를 초기화한다.
+반면 let과 const로 선언한 변수의 경우 호이스팅 시 변수를 초기화하지 않는다.
+
+한줄 정리 하자면, let과 const를 var 대신 사용함으로써 너무 유연해서 발생할 수 있는 호이스팅 시 undefined같은 문제를 방지할 수 있다. [참조 오류로 잡아준다!]
