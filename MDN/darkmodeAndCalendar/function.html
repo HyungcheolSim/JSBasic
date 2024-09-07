@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview"></section>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded",function(event){
+        chooseName();
+    });
+    function chooseName() {
+      const names = [
+        "Chris",
+        "Li Kang",
+        "Anne",
+        "Francesca",
+        "Mustafa",
+        "Tina",
+        "Bert",
+        "Jada",
+      ];
+      const para = document.createElement("p");
+
+      let num = Math.floor(Math.random() * names.length) - 1;
+      para.innerText = names[num];
+      // Don't edit the code below here!
+
+      const section = document.querySelector("section");
+      section.appendChild(para);
+    }
+  </script>
+</html>
