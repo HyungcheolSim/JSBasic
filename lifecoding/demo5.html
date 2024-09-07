@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var numbers = [20,10,9,8,7,6,5,4,3,2,1];
+        var sortfunc = function(a,b){
+            console.log(a, b);
+            return b-a;
+        }
+        numbers.sort(sortfunc);
+        console.log(numbers);
+        //여기서  sortfunc 가 콜백 함수.
+        //callback함수를 sort가 인자로 받아서 
+        //sort가 동작하는 데 영향을 줄 수 있다. 이또한 함수가 값이기 때문에 가능.
+        
+    </script>
+</body>
+</html>
