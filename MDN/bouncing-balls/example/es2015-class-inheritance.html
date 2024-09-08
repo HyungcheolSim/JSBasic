@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Object-oriented JavaScript inheritance</title>
-  </head>
 
-  <body></body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Object-oriented JavaScript inheritance</title>
+</head>
 
-  <script>
-    // Basic Person class
+<body></body>
+
+<script>
+  // Basic Person class
 
     class Person {
       constructor(first, last, age, gender, interests) {
@@ -63,6 +64,12 @@
     // Instantiate Teacher
 
     let snape = new Teacher("Severus", "Snape", 58, "male", ["Potions"], "Dark arts", 5);
+
+  console.log(snape.subject);
+
+  snape.subject = "Balloon animals";
+  console.log(snape.subject);
+
     snape.greeting(); // Hi! I'm Severus.
     snape.farewell(); // Severus has left the building. Bye for now.
     console.log(snape.age); // 58
